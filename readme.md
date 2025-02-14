@@ -23,4 +23,4 @@ probarlo, descarga el repositorio y ejecuta el ejemplo o pedazo de código.
 Tengo 2 años de experiencia y soy freelancer, disfruto creando software,
 pero la mayor satisfaction que tengo es ayudar a negocios y personas a
 generar mas ingresos con mi software
-- [Contactare por Correo](malito:fvcoder1@gmail.com)
+- [Contactare por Correo Electrónico](malito:fvcoder1@gmail.com)
