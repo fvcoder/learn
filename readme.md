@@ -6,8 +6,7 @@ donde pongo el código donde aprendí algo nuevo.
 ## ¿Como funciona?
 Voy a almacenar el código en función de las la tecnología principal,
 es decir, agrupare en carpetas como:
-- [React](./react) -> Todo lo relacionado con react
-- [Angular](./angular) -> Todo lo relacionado con angular
+- [html](./html) -> Todo lo relacionado con react
 
 Y las sub carpetas serán los títulos de los ejemplos, métodos o técnicas.
 Pero tratare de dejar un `readme.md` en cada una de las carpetas.
