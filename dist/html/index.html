@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Html - Fernando Ticona</title>
+    </head>
+    <body>
+        <h1>HTML</h1>
+<p>HTML, es un lenguaje de marcado de hipertexto, no es
+un lenguaje de programación, fue creado para poder
+estructurar y desplegar una pagina web.</p>
+<p>Originalmente fue creado para compartir documentos
+relacionándolos entre si, con el paso de el tiempo y
+la afiliación de distintas tecnologías, su uso fue
+pasando a ser mas estructural, pero aun no pierde su
+propósito.</p>
+<h2>Anatomía de HTML</h2>
+<p>HTML se basa en elementos y esta es su anatomía:</p>
+<pre class="language-html"><code class="language-html code-highlight"><span class="code-line line-number" line="1"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>Los perros son traviesos<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<p>Es bastante sencillo, pero te lo explico. <code>&#x3C;p></code> es
+la apertura de una etiqueta, <code>Los perros son traviesos</code>
+el contenido de el elemento y <code>&#x3C;/p></code> el cierre de
+la etiqueta.</p>
+<p><strong>Repasemos conceptos:</strong></p>
+<ul>
+<li><strong>HTML:</strong> lenguaje de marcado de hipertexto</li>
+<li><strong>Etiqueta:</strong> Elemento de HTML</li>
+<li><strong>Elemento:</strong> El uso de la Etiqueta en html</li>
+</ul>
+<p>Es un poco confuso, pero te voy a enseñar un concepto
+fundamental</p>
+<h2>DOM</h2>
+<p>DOM (Document Object Model), es un concepto sobre el cual
+se organiza HTML como si fuera un árbol.</p>
+<p>El DOM facilita la organización, estructura y facilita el
+manejo del documento desde JavaScript.</p>
+<h2>Estructura de una pagina web</h2>
+<pre class="language-html"><code class="language-html code-highlight"><span class="code-line line-number" line="1"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="2"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="3">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="4">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>Mi Página<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="5">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="6">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="7">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Bienvenidos a mi página<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="8">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>Este es un párrafo de ejemplo.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="9">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="10"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<p>Esta es la estructura base de cualquier pagina web,
+a que tener en cuenta que si existe un error de sintaxis,
+el navegador que lo interprete va a intentar arreglarlo o
+llevarlo a un estado ideal</p>
+<blockquote>
+<p>[!NOTE]<br>
+Muchas veces esto hace que nuestra pagina no se vea bien.</p>
+</blockquote>
+<p><code>&#x3C;!DOCTYPE html></code> es la version de html que estamos usando,
+la ultima version es la 5, leva años en esa version.</p>
+<blockquote>
+<p>[!NOTE]<br>
+Vas a notar que entre mas se use el software, mas va a
+tardar en tener nuevos cambios.</p>
+</blockquote>
+<p>Anteriores versiones:</p>
+<pre class="language-html"><code class="language-html code-highlight"><span class="code-line line-number" line="1">4.01
+</span><span class="code-line line-number" line="2"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">HTML</span> <span class="token name">PUBLIC</span> <span class="token string">"-//W3C//DTD HTML 4.01//EN"</span> <span class="token string">"http://www.w3.org/TR/html4/strict.dtd"</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="3">4
+</span><span class="code-line line-number" line="4"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">HTML</span> <span class="token name">PUBLIC</span> <span class="token string">"-//W3C//DTD HTML 4.0//EN"</span> <span class="token string">"http://www.w3.org/TR/REC-html40.dtd"</span><span class="token punctuation">></span></span>
+</span><span class="code-line line-number" line="5">3
+</span><span class="code-line line-number" line="6"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">HTML</span> <span class="token name">PUBLIC</span> <span class="token string">"-//W3C//DTD HTML 3.0//EN"</span> <span class="token string">"http://www.w3.org/TR/REC-html30.dtd"</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<p><code>&#x3C;html>&#x3C;/html></code> es el elemento raíz de un documento HTML.</p>
+<p><code>&#x3C;head>&#x3C;/head></code> es la cabeza de el documento HTML, guarda
+la información acerca de la interpretación de la pagina.
+El contenido del elemento no se ve.</p>
+<p>Puede contener:</p>
+<ul>
+<li>titulo de la pagina</li>
+<li>pre-carga de elementos multimedia</li>
+<li>pre-conexión a dominos o enlaces de recursos</li>
+<li>iconos de la pagina</li>
+<li>configuración de la pagina para distintos navegadores</li>
+</ul>
+<p><code>&#x3C;body>&#x3C;/body></code> es el contenido visible de el documento HTML,
+aquí es donde vamos a programar y plasmar nuestras ideas.</p>
+<h2>elements</h2>
+<ul>
+<li><a href="./a.html">a.html</a></li>
+<li><a href="./abbr.html">abbr.html</a></li>
+</ul>
+    </body>
+    </html>
