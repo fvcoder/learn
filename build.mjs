@@ -5,28 +5,28 @@ import markdown from "@wcj/markdown-to-html";
 import { generateHTMLDocument, readRecursiveDir } from './utils.mjs';
 
 const __dirname = process.cwd();
-const distPath = join(__dirname, 'dist');
+const docsPath = join(__dirname, 'docs');
 const ignorePath = [
     "node_modules",
     ".vscode",
     ".git",
-    "dist",
+    "docs",
     "introduction"
 ]
 
 async function deployHTML() {
-    const dist = join(__dirname, 'dist', 'html');
+    const docs = join(__dirname, 'docs', 'html');
     const srcPath = join(__dirname, 'html');
     const srcApiPath = join(srcPath, 'api');
     let readme = String(await readFile(join(srcPath, 'readme.md'), 'utf-8'));
-    await mkdir(dist);
+    await mkdir(docs);
 
     const apiDir = await readRecursiveDir(srcApiPath)
 
     for (let ad of apiDir) {
         const props = await stat(ad)
         const path = String(ad).replace(srcPath, "")
-        const dirPath = join(dist, path)
+        const dirPath = join(docs, path)
         const name = basename(ad)
 
         
@@ -40,7 +40,7 @@ async function deployHTML() {
     }
 
     const readmeHTML = markdown(readme)
-    await writeFile(join(__dirname, 'dist', 'html', 'index.html'), generateHTMLDocument("Html - Fernando Ticona", readmeHTML));
+    await writeFile(join(__dirname, 'docs', 'html', 'index.html'), generateHTMLDocument("Html - Fernando Ticona", readmeHTML));
 }
 
 async function generateReadme() {
@@ -61,14 +61,14 @@ async function generateReadme() {
         }
     }
     
-    await writeFile(join(__dirname, 'dist', 'index.html'), generateHTMLDocument("Fernando Ticona aprende", markdown(readme)));
+    await writeFile(join(__dirname, 'docs', 'index.html'), generateHTMLDocument("Fernando Ticona aprende", markdown(readme)));
 }
 
 async function deployMain() {
-    if (existsSync(distPath)) {
-        await rm(distPath, { recursive: true });
+    if (existsSync(docsPath)) {
+        await rm(docsPath, { recursive: true });
     } 
-    await mkdir(distPath);
+    await mkdir(docsPath);
 
     try {
         await generateReadme();
