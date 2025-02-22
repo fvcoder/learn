@@ -35,7 +35,7 @@ async function deployHTML() {
             readme += `## ${name}\n`
         } else {
             await copyFile(ad, dirPath)
-            readme += `- [${name}](./${name})\n`
+            readme += `- [${name}](./api/elements/${name})\n`
         }
     }
 
