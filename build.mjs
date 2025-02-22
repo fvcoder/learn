@@ -62,6 +62,7 @@ async function generateReadme() {
     }
     
     await writeFile(join(__dirname, 'docs', 'index.html'), generateHTMLDocument("Fernando Ticona aprende", markdown(readme)));
+    await writeFile(join(__dirname, 'docs', 'CNAME'), "learn.fvcoder.com");
 }
 
 async function deployMain() {
