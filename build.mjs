@@ -1,6 +1,6 @@
 import { existsSync } from 'fs';
 import { rm, mkdir, writeFile, stat, copyFile, readFile, readdir } from 'fs/promises';
-import { join, basename } from 'path';
+import { join, basename, relative, resolve } from 'path';
 import markdown from "@wcj/markdown-to-html";
 import { generateHTMLDocument, readRecursiveDir } from './utils.mjs';
 
@@ -11,31 +11,43 @@ const ignorePath = [
     ".vscode",
     ".git",
     "docs",
-    "introduction"
+    "introduction",
 ]
+
+function copyFilesAndReport(basePath, path = "/") {
+
+}
 
 async function deployHTML() {
     const docs = join(__dirname, 'docs', 'html');
     const srcPath = join(__dirname, 'html');
     const srcApiPath = join(srcPath, 'api');
+    const srcProjectPath = join(srcPath, 'api');
     let readme = String(await readFile(join(srcPath, 'readme.md'), 'utf-8'));
     await mkdir(docs);
 
-    const apiDir = await readRecursiveDir(srcApiPath)
+    
+    const apiDir = (await readRecursiveDir(srcPath)).filter((x) => !String(x).endsWith(".md"))
+    copyFilesAndReport(srcPath, "/")
 
     for (let ad of apiDir) {
-        const props = await stat(ad)
-        const path = String(ad).replace(srcPath, "")
-        const dirPath = join(docs, path)
+        const path = relative(srcPath, ad)
+        const docPath = join(docs, path)
         const name = basename(ad)
+        const props = await stat(ad)
 
-        
         if (props.isDirectory()) {
-            await mkdir(dirPath, { recursive: true })
-            readme += `## ${name}\n`
+            if (!existsSync(docPath)) {
+                await mkdir(docPath, { recursive: true })
+                readme += `## ${name.toUpperCase()[0]}${name.slice(1)}\n`
+            }
         } else {
-            await copyFile(ad, dirPath)
-            readme += `- [${name}](./api/elements/${name})\n`
+            const pathDir = docPath.replace(name, "")
+            if (!existsSync(resolve(pathDir))) {
+                await mkdir(docPath, { recursive: true })
+            }
+            await copyFile(ad, docPath)
+            readme += `- [${name}](./${path})\n`
         }
     }
 
