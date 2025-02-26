@@ -1,4 +1,4 @@
-# Fernando Ticona aprende
+# Aprendiendo con Fernando Ticona 
 Este es un espacio para aprender, un pequeño sandbox para experimentar,
 el lugar donde cometo mas errores de lo común. En fin, es un espacio
 donde pongo el código donde aprendí algo nuevo.
